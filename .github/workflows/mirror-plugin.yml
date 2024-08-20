@@ -2,43 +2,42 @@ name: Mirror WordPress Plugin
 
 on:
   schedule:
-    - cron: '0 0 3,15 * *'  # Runs monthly at midnight UTC
+    - cron: '0 0 3,15 * *'  # Runs twice a month at midnight UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all tags and branches
 
-    - name: Install Subversion
-      run: sudo apt-get install subversion
+      - name: Install Subversion
+        run: sudo apt-get install subversion
 
-    - name: Mirror from WordPress.org
-      run: |
-        # Get the latest tag
-        LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | sort -V | tail -n 1 | tr -d '/')
-        echo "Latest tag: $LATEST_TAG"
+      - name: Mirror from WordPress.org
+        run: |
+          LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | sort -V | tail -n 1 | tr -d '/')
+          echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
+          echo "Latest tag: $LATEST_TAG"
 
-        # Checkout the latest tag
-        svn export https://plugins.svn.wordpress.org/food-store/tags/$LATEST_TAG svn_temp
+          if git rev-parse "v$LATEST_TAG" >/dev/null 2>&1; then
+            echo "Tag v$LATEST_TAG already exists. Skipping mirror."
+            exit 0
+          fi
 
-        # Copy new files
-        cp -R svn_temp/* .
-        rm -rf svn_temp
-    
-    - name: Commit and push changes
-      run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add .
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Mirror WordPress plugin version $LATEST_TAG" && git push)
-
-    - name: Create new tag
-      run: |
-        LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | sort -V | tail -n 1 | tr -d '/')
-        git tag -a $LATEST_TAG -m "Version $LATEST_TAG"
-        git push origin $LATEST_TAG
+          svn export https://plugins.svn.wordpress.org/food-store/tags/$LATEST_TAG svn_temp
+          cp -R svn_temp/* .
+          rm -rf svn_temp
+      
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Mirror WordPress plugin version ${{ env.LATEST_TAG }}
+          tagging_message: 'v${{ env.LATEST_TAG }}'
