@@ -19,13 +19,29 @@ jobs:
 
     - name: Mirror from WordPress.org
       run: |
-        svn checkout https://plugins.svn.wordpress.org/food-store/ svn_temp
-        rsync -avz --delete svn_temp/ ./ --exclude='.git' --exclude='.github'
-        rm -rf svn_temp
+        # Get the latest tag
+        LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | sort -V | tail -n 1 | tr -d '/')
+        echo "Latest tag: $LATEST_TAG"
 
+        # Checkout the latest tag
+        svn export https://plugins.svn.wordpress.org/food-store/tags/$LATEST_TAG svn_temp
+
+        # Remove everything except .git and .github
+        find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.github' -exec rm -rf {} +
+
+        # Copy new files
+        cp -R svn_temp/* .
+        rm -rf svn_temp
+    
     - name: Commit and push changes
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Mirror WordPress plugin" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Mirror WordPress plugin version $LATEST_TAG" && git push)
+
+    - name: Create new tag
+      run: |
+        LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | sort -V | tail -n 1 | tr -d '/')
+        git tag -a $LATEST_TAG -m "Version $LATEST_TAG"
+        git push origin $LATEST_TAG
