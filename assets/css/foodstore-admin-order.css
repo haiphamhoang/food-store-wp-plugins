@@ -1,0 +1,38 @@
+.food-order-status.status-pending {
+  background-color: #fcbdbd;
+  color: #54471a;
+}
+
+.food-order-status.status-accepted {
+  background-color: #d8edf8;
+  color: #43809d;
+}
+
+.food-order-status.status-processing {
+  background-color: #fcbdbd;
+  color: #54471a;
+}
+
+.food-order-status.status-ready {
+  background-color: #a5a193;
+  color: #fff;
+}
+
+.food-order-status.status-pending {
+  background-color: #f7ae18;
+  color: #fff;
+}
+
+.food-order-status.status-cancelled {
+  background-color: #f8d7da;
+  color: #79252d;
+}
+
+.food-order-status.status-completed {
+  background-color: #e0f0d7;
+  color: #3a773a;
+}
+
+.wc-food-order-status .select2-container {
+  width: 100% !important;
+}

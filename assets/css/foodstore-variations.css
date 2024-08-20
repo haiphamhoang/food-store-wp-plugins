@@ -1,0 +1,61 @@
+/* Variations Radio Buttons */
+.variations_form .variations {
+	display: none;
+}
+
+.wfs-variations {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.wfs-variations .wfs-variation {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.wfs-variations .wfs-variation:hover {
+	background-color: #f9f9f9;
+}
+
+.wfs-variations .wfs-variation > div {
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.wfs-variation-radio .wfs-variation-selector {
+	width: 30px;
+	flex: 0 0 30px;
+}
+
+.wfs-variation-selector input {
+	outline: none;
+}
+
+.wfs-variation-image {
+	width: 50px;
+	flex: 0 0 50px;
+}
+
+.wfs-variation-image img {
+	width: 36px;
+	height: 36px;
+	max-width: 36px;
+	display: block;
+}
+
+.wfs-variations .wfs-variation > div:last-child {
+	padding-right: 0;
+}
+
+.wfs-variation-radio .wfs-variation-name {
+	font-weight: 700;
+}
+
+.wfs-variation-radio .wfs-variation-info .wfs-variation-price {
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 14px;
+}
+/* Variation Styling End */

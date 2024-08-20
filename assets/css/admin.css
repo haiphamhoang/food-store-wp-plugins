@@ -1,0 +1,317 @@
+.foodstore .form-table input[type="text"],
+.foodstore .form-table input[type="number"],
+.foodstore .form-table input[type="tel"],
+.foodstore .form-table input[type="email"],
+.foodstore .select2-container {
+  width: 400px !important;
+}
+
+.foodstore .form-table textarea {
+  min-width: 400px !important;
+}
+
+.foodstore .form-table td.forminp.forminp-radio {
+  padding-top: 0px !important;
+}
+
+.select2-container .select2-selection--multiple {
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  padding: 0 5px;
+}
+
+.foodstore-help-tip {
+  color: #666;
+  display: inline-block;
+  font-size: 1.1em;
+  font-style: normal;
+  height: 16px;
+  line-height: 16px;
+  position: relative;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.foodstore-help-tip::after {
+  font-family: Dashicons;
+  speak: none;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  text-indent: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  content: "";
+  cursor: help;
+}
+
+h2 .foodstore-help-tip {
+  margin-top: -5px;
+  margin-left: 0.25em;
+}
+
+.tips {
+  cursor: help;
+  text-decoration: none;
+}
+
+img.tips {
+  padding: 5px 0 0;
+}
+
+#tiptip_holder {
+  display: none;
+  z-index: 8675309;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#tiptip_holder.tip_top {
+  padding-bottom: 5px;
+}
+
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+  margin-top: -7px;
+  margin-left: -6px;
+  border-top-color: #333;
+}
+
+#tiptip_holder.tip_bottom {
+  padding-top: 5px;
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+  margin-top: -5px;
+  margin-left: -6px;
+  border-bottom-color: #333;
+}
+
+#tiptip_holder.tip_right {
+  padding-left: 5px;
+}
+
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+  margin-top: -6px;
+  margin-left: -5px;
+  border-right-color: #333;
+}
+
+#tiptip_holder.tip_left {
+  padding-right: 5px;
+}
+
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+  margin-top: -6px;
+  margin-left: -7px;
+  border-left-color: #333;
+}
+
+#tiptip_content,
+.chart-tooltip,
+.wc_error_tip {
+  color: #fff;
+  font-size: 0.8em;
+  max-width: 150px;
+  background: #333;
+  text-align: center;
+  border-radius: 3px;
+  padding: 0.618em 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#tiptip_content code,
+.chart-tooltip code,
+.wc_error_tip code {
+  padding: 1px;
+  background: #888;
+}
+
+#tiptip_arrow,
+#tiptip_arrow_inner {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 6px;
+  height: 0;
+  width: 0;
+}
+
+#woocommerce-product-data .hndle label:first-child {
+  border-right: 0 !important;
+}
+
+span.wfs_order_meta {
+  display: block;
+  margin: 3px 0px;
+}
+
+.forminp-multicheck label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#wpfooter a {
+  text-decoration: none;
+}
+
+#wpfooter span {
+  color: #8b8980;
+}
+
+/* Admin Addon */
+#addon_options .wfs-addons {
+  background: #fff;
+  margin: 0px 20px;
+}
+#addon_options .wfs-addon {
+  margin: 4px 0px 16px 0px;
+  padding: 0px;
+  border: 1px solid #ddd;
+}
+
+.addon-icons:before {
+  position: relative;
+  font-size: 18px;
+  left: -2px;
+  top: 3px;
+}
+
+.add-new-addon .dashicons-plus-alt:before {
+  top: 2px;
+}
+
+.add-new-addon .dashicons-plus:before {
+  top: 4px;
+}
+
+.wfs-addon h3 {
+  background: #f8f8f8;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #666;
+  margin-top: 0px;
+  cursor: move;
+}
+
+body.wfs-is-dragging-metaboxes .wfs-addon {
+  border: 1px dashed #646970 !important;
+}
+
+.wfs-addon-metabox {
+  padding: 10px;
+}
+
+#addon_options button.load-wfs-addon {
+  margin-left: 5px;
+}
+#addon_options .wfs-addon-msg {
+  padding: 10px 0px;
+}
+
+#addon_options .wfs-col-6 {
+  width: 50%;
+}
+
+.wfs-metabox-content-wrapper {
+  display: flex;
+}
+
+.wfs-metabox-content {
+  padding: 10px;
+  overflow: hidden;
+}
+
+#addon_options .addon-category-table input,
+#addon_options .addon-category-table select {
+  width: 100%;
+}
+
+#addon_options .addon-category-table th {
+  padding: 0px 10px 0px 0;
+}
+
+#addon_options .form-table td {
+  padding-left: 0px;
+}
+
+#addon_options .wfs-input-element {
+  width: 50%;
+}
+
+.addon-category-table td {
+  padding: 7px 10px;
+}
+
+table.wfs-addon-items {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  margin-top: 10px;
+}
+
+table.wfs-addon-items th,
+table.wfs-addon-items td {
+  width: 30%;
+  text-align: left;
+  padding: 8px;
+}
+
+.select_addon.select_all_addons {
+  margin-right: 5px;
+}
+
+.wfs-addon-items thead {
+  background-color: #eaeaea;
+}
+.wfs-addon-items tbody td {
+  background: #f6f6f6;
+}
+
+.select_addon.select_all_addons input.wfs-select-all {
+  margin-right: 5px;
+}
+
+a.remove_row.delete {
+  text-decoration: none;
+  color: #da0f0f;
+}
+
+.add-new-addon-category {
+  padding: 4px 10px;
+}
+
+.remove.wfs-addon-cat {
+  cursor: pointer;
+}
+
+.wfs-tools-settings h3 {
+  font-size: 14px;
+  padding: 12px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.wfs-addon-metabox .wfs-addon-category {
+  display: flex;
+}
+
+.wfs-addon-metabox .wfs-addons-selection {
+  width: 50%;
+}
+
+body.wfs-tools-settings .foodstore-save-button {
+  display: none;
+}
+
+body .wfs-addon-category span.select2-container {
+  width: 65% !important;
+}
