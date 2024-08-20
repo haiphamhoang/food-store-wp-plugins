@@ -27,10 +27,10 @@ jobs:
         svn export https://plugins.svn.wordpress.org/food-store/tags/$LATEST_TAG svn_temp
 
         # Remove everything except .git and .github
-        find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.github' -exec rm -rf {} +
+        find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.github' | -name 'svn_temp' -exec rm -rf {} +
 
         # Copy new files
-        cp -R svn_temp/. .
+        cp -R svn_temp/* .
         rm -rf svn_temp
     
     - name: Commit and push changes
