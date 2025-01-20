@@ -23,7 +23,7 @@ jobs:
 
       - name: Mirror from WordPress.org
         run: |
-          LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | sort -V | tail -n 1 | tr -d '/')
+          LATEST_TAG=$(svn ls https://plugins.svn.wordpress.org/food-store/tags/ | tail -n 1 | tr -d '/')
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
           echo "Latest tag: $LATEST_TAG"
 
