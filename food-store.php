@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name: Food Store - Online Food Delivery & Pickup
  * Description: Food Store is complete online food ordering platform with all your favourite WooCommerce functionalities.
- * Version: 1.5
+ * Version: 1.5.1
  * Author: WP Scripts
  * Text Domain: food-store
  * Domain Path: /languages/
