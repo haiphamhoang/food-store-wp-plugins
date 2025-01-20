@@ -1,8 +1,8 @@
 name: Mirror WordPress Plugin
 
 on:
-  schedule:
-    - cron: '0 0 3,15 * *'  # Runs twice a month at midnight UTC
+  # schedule:
+  #   - cron: '0 0 3,15 * *'  # Runs twice a month at midnight UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
