@@ -20,7 +20,7 @@ final class FoodStore {
 	 *
 	 * @var string
 	 */
-	public $version = '1.5.1';
+	public $version = '1.5.2';
 
 	/**
 	 * The single instance of the class.
@@ -56,7 +56,8 @@ final class FoodStore {
       		$this->init_hooks();
       		do_action( 'food_store_loaded' );
     	} else {
-    		add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
+			deactivate_plugins('food-store/food-store.php');
+			add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
     	}
 	}
 

@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name: Food Store - Online Food Delivery & Pickup
  * Description: Food Store is complete online food ordering platform with all your favourite WooCommerce functionalities.
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: WP Scripts
  * Text Domain: food-store
  * Domain Path: /languages/
@@ -45,6 +45,9 @@ if ( ! class_exists( 'WFS_Dependencies' ) ) {
 if ( ! class_exists( 'FoodStore', false ) ) {
   include_once dirname( WFS_PLUGIN_FILE ) . '/includes/class-food-store.php';
 }
+
+// Added plugin.php file to stop installation if WooCommerce is not activated
+require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
  * Returns the main instance of WFC.

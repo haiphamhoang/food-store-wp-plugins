@@ -3,9 +3,9 @@ Contributors: wpscripts
 Donate link: https://www.buymeacoffee.com/wpscripts
 Tags: restaurant, restaurant menu, food ordering, food delivery, food pickup
 Requires PHP: 7.1
-Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 1.5.1
+Requires at least: 4.0
+Tested up to: 6.5
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,18 +132,15 @@ You can purchase the paid extension from[here](https://checkout.freemius.com/mod
 
 == Changelog ==
 
-= 1.5 - 09-06-2024 =
-* New - Added settings for display confirmation message before empty cart
-* New - New template added for cart empty confirmation
-* Enhancement - Added service time missing error message when time is not set
-* Fix - Modal overflow issue when edit product clicked from cart
-* Fix - Empty service type issue on checkout page when cookie is deleted
-* Freemius SDK updated to 2.7.2
+= 1.5.2 - 26-01-2025 =
+* Fix - Updated deactivation hook to uninstall plugin if dependeny is not available
+* Freemius SDK updated to 2.10
+* minor code enhancement
 
 [See changelog for all versions](https://raw.githubusercontent.com/wpscripts/food-store/main/changelog).
 
 
 == Upgrade Notice ==
 
-= 1.5
+= 1.5.2
 New version is available. Thank you for trying out our new features. Reach us anytime to report any bug or getting support.
